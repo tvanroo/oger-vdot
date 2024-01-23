@@ -238,5 +238,11 @@
     "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/payments",
     "Description": "(Microsoft Pay) for Edge browser on certain devices"
+  },
+  {
+    "AppxPackage": "Microsoft.549981C3F5F10",
+    "VDIState": "Unchanged",
+    "URL": "",
+    "Description": "Microsoft Cortona"
   }
 ]
