@@ -28,10 +28,10 @@
 [Cmdletbinding(DefaultParameterSetName="Default")]
 Param (
     # Parameter help description
-    [ArgumentCompleter( { Get-ChildItem $PSScriptRoot -Directory | Where-Object { $_.Name -ne 'LGPO' } | Select-Object -ExpandProperty Name } )]
+    [ArgumentCompleter( { Get-ChildItem $PSScriptRoot -Directory | Select-Object -ExpandProperty Name } )]
     [System.String]$WindowsVersion = (Get-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\").ReleaseId,
 
-    [ValidateSet('All','WindowsMediaPlayer','AppxPackages','ScheduledTasks','DefaultUserSettings','Autologgers','Services','NetworkOptimizations','LGPO','DiskCleanup')] 
+    [ValidateSet('All','WindowsMediaPlayer','AppxPackages','ScheduledTasks','DefaultUserSettings','Autologgers','Services','NetworkOptimizations','DiskCleanup')] 
     [String[]]
     $Optimizations,
 
@@ -52,7 +52,7 @@ Param (
 - AUTHORED BY:    Robert M. Smith and Tim Muessig (Microsoft)
 - AUTHORED DATE:  11/19/2019
 - CONTRIBUTORS:   Travis Roberts (2020), Jason Parker (2020)
-- LAST UPDATED:   7/8/2022
+- LAST UPDATED:   2/22/2024
 - PURPOSE:        To automatically apply settings referenced in the following white papers:
                   https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds_vdi-recommendations-1909
                   
@@ -65,33 +65,27 @@ Param (
 - DEPENDENCIES    1. On the target machine, run PowerShell elevated (as administrator)
                   2. Within PowerShell, set exectuion policy to enable the running of scripts.
                      Ex. Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-                  3. LGPO.EXE (available at https://www.microsoft.com/en-us/download/details.aspx?id=55319)
-                  4. LGPO database files available in the respective folders (ex. \1909, or \2004)
-                  5. This PowerShell script
-                  6. The text input files containing all the apps, services, traces, etc. that you...
+                  3. This PowerShell script
+                  4. The text input files containing all the apps, services, traces, etc. that you...
                      may be interested in disabling. Please review these input files to customize...
                      to your environment/requirements
 
 - REFERENCES:
 https://social.technet.microsoft.com/wiki/contents/articles/7703.powershell-running-executables.aspx
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-6
-https://blogs.technet.microsoft.com/secguide/2016/01/21/lgpo-exe-local-group-policy-object-utility-v1-0/
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service?view=powershell-6
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-6
 https://msdn.microsoft.com/en-us/library/cc422938.aspx
 #>
 
 <# Categories of cleanup items:
-This script is dependent on the following:
-LGPO Settings folder, applied with the LGPO.exe Microsoft app
-
 The UWP app input file contains the list of almost all the UWP application packages that can be removed with PowerShell interactively.  
 The Store and a few others, such as Wallet, were left off intentionally.  Though it is possible to remove the Store app, 
 it is nearly impossible to get it back.  Please review the configuration files and change the 'VDIState' to anything but 'disabled' to keep the item.
 #>
 BEGIN 
 {
-    [Version]$VDOTVersion = "2.1.2009.1" 
+    [Version]$VDOTVersion = "2.2.2009.2" 
     # Create Key
     $KeyPath = 'HKLM:\SOFTWARE\VDOT'
     If (-Not(Test-Path $KeyPath))
@@ -123,7 +117,7 @@ BEGIN
         New-ItemProperty -Path $KeyPath -Name $LastRun -Value $LastRunValue | Out-Null
     }
     
-    $EventSources = @('VDOT', 'WindowsMediaPlayer', 'AppxPackages', 'ScheduledTasks', 'DefaultUserSettings', 'Autologgers', 'Services', 'NetworkOptimizations', 'LGPO', 'AdvancedOptimizations', 'DiskCleanup')
+    $EventSources = @('VDOT', 'WindowsMediaPlayer', 'AppxPackages', 'ScheduledTasks', 'DefaultUserSettings', 'Autologgers', 'Services', 'NetworkOptimizations', 'LocalPolicy', 'AdvancedOptimizations', 'DiskCleanup')
     If (-not([System.Diagnostics.EventLog]::SourceExists("Virtual Desktop Optimization")))
     {
         # All VDOT main function Event ID's [1-9]
@@ -560,17 +554,17 @@ PROCESS {
     #   * change the "Root Certificates Update" policy.
     #   * change the "Enable Windows NTP Client" setting.
     #   * set the "Select when Quality Updates are received" policy
-    If ($Optimizations -contains "LGPO" -or $Optimizations -contains "All")
+    If ($Optimizations -contains "All")
     {
         $LocalPolicyFilePath = ".\ConfigurationFiles\PolicyRegSettings.json"
         If (Test-Path $LocalPolicyFilePath)
         {
-            Write-EventLog -EventId 80 -Message "Local Group Policy Items" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Information
+            Write-EventLog -EventId 80 -Message "Local Group Policy Items" -LogName 'Virtual Desktop Optimization' -Source 'Local-policy' -EntryType Information
             Write-Host "[VDI Optimize] Local Group Policy Items" -ForegroundColor Cyan
             $PolicyRegSettings = Get-Content $LocalPolicyFilePath | ConvertFrom-Json
             If ($PolicyRegSettings.Count -gt 0)
             {
-                Write-EventLog -EventId 80 -Message "Processing PolicyRegSettings Settings ($($PolicyRegSettings.Count) Hives)" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Information
+                Write-EventLog -EventId 80 -Message "Processing PolicyRegSettings Settings ($($PolicyRegSettings.Count) Hives)" -LogName 'Virtual Desktop Optimization' -Source 'Local-policy' -EntryType Information
                 Write-Verbose "Processing PolicyRegSettings Settings ($($PolicyRegSettings.Count) Hives)"
                 Foreach ($Key in $PolicyRegSettings)
                 {
@@ -578,7 +572,7 @@ PROCESS {
                     {
                         If (Get-ItemProperty -Path $Key.RegItemPath -Name $Key.RegItemValueName -ErrorAction SilentlyContinue) 
                         { 
-                            Write-EventLog -EventId 80 -Message "Found key, $($Key.RegItemPath) Name $($Key.RegItemValueName) Value $($Key.RegItemValue)" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Information
+                            Write-EventLog -EventId 80 -Message "Found key, $($Key.RegItemPath) Name $($Key.RegItemValueName) Value $($Key.RegItemValue)" -LogName 'Virtual Desktop Optimization' -Source 'Local-policy' -EntryType Information
                             Write-Verbose "Found key, $($Key.RegItemPath) Name $($Key.RegItemValueName) Value $($Key.RegItemValue)"
                             Set-ItemProperty -Path $Key.RegItemPath -Name $Key.RegItemValueName -Value $Key.RegItemValue -Force 
                         }
@@ -586,13 +580,13 @@ PROCESS {
                         { 
                             If (Test-path $Key.RegItemPath)
                             {
-                                Write-EventLog -EventId 80 -Message "Path found, creating new property -Path $($Key.RegItemPath) -Name $($Key.RegItemValueName) -PropertyType $($Key.RegItemValueType) -Value $($Key.RegItemValue)" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Information
+                                Write-EventLog -EventId 80 -Message "Path found, creating new property -Path $($Key.RegItemPath) -Name $($Key.RegItemValueName) -PropertyType $($Key.RegItemValueType) -Value $($Key.RegItemValue)" -LogName 'Virtual Desktop Optimization' -Source 'Local-policy' -EntryType Information
                                 Write-Verbose "Path found, creating new property -Path $($Key.RegItemPath) Name $($Key.RegItemValueName) PropertyType $($Key.RegItemValueType) Value $($Key.RegItemValue)"
                                 New-ItemProperty -Path $Key.RegItemPath -Name $Key.RegItemValueName -PropertyType $Key.RegItemValueType -Value $Key.RegItemValue -Force | Out-Null 
                             }
                             Else
                             {
-                                Write-EventLog -EventId 80 -Message "Creating Key and Path" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Information
+                                Write-EventLog -EventId 80 -Message "Creating Key and Path" -LogName 'Virtual Desktop Optimization' -Source 'Local-policy' -EntryType Information
                                 Write-Verbose "Creating Key and Path"
                                 New-Item -Path $Key.RegItemPath -Force | New-ItemProperty -Name $Key.RegItemValueName -PropertyType $Key.RegItemValueType -Value $Key.RegItemValue -Force | Out-Null 
                             }
@@ -603,26 +597,10 @@ PROCESS {
             }
             Else
             {
-                Write-EventLog -EventId 80 -Message "No LGPO Settings Found!" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Warning
-                Write-Warning "No LGPO Settings found"
+                Write-EventLog -EventId 80 -Message "No Local-policy Settings Found!" -LogName 'Virtual Desktop Optimization' -Source 'Local-policy' -EntryType Warning
+                Write-Warning "No Local-policy Settings found"
             }
         }
-        # Removing support for LGPO legacy tool
-        #Else 
-        #{
-        #    If (Test-Path (Join-Path $PSScriptRoot "LGPO\LGPO.exe"))
-        #    {
-        #        Write-EventLog -EventId 80 -Message "[VDI Optimize] Import Local Group Policy Items" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Information
-        #        Write-Host "[VDI Optimize] Import Local Group Policy Items" -ForegroundColor Cyan
-        #        Write-Verbose "Importing Local Group Policy Items"
-        #        Start-Process (Join-Path $PSScriptRoot "LGPO\LGPO.exe") -ArgumentList "/g .\LGPO" -Wait
-        #    }
-        #    Else
-        #    {
-        #        Write-EventLog -EventId 80 -Message "File not found $PSScriptRoot\LGPO\LGPO.exe" -LogName 'Virtual Desktop Optimization' -Source 'LGPO' -EntryType Warning
-        #        Write-Warning "File not found $PSScriptRoot\LGPO\LGPO.exe"
-        #    }
-        #}    
     }
     #endregion
     
