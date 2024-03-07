@@ -236,5 +236,12 @@
         "PropertyType": "DWORD",
         "PropertyValue": 0,
         "SetProperty": "True"
+    },
+    {
+        "HivePath": "HKLM:\\VDOT_TEMP\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "KeyName": "Start_IrisRecommendations",
+        "PropertyType": "DWORD",
+        "PropertyValue": 0,
+        "SetProperty": "True"
     }
 ]
