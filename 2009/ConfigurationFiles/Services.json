@@ -18,23 +18,23 @@
   },
   {
     "Name": "DiagSvc",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "Description": "Diagnostic Execution Service"
   },
   {
     "Name": "DiagTrack",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "Description": "Connected User Experiences and Telemetry."
   },
   {
     "Name": "DPS",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://docs.microsoft.com/en-us/uwp/api/Windows.System.Diagnostics?view=winrt-19041",
     "Description": "The Diagnostic Policy Service enables problem detection, troubleshooting and resolution for Windows components. If this service is stopped, diagnostics will no longer function."
   },
   {
     "Name": "DusmSvc",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://docs.microsoft.com/en-us/uwp/schemas/mobilebroadbandschema/dusm/schema-root",
     "Description": "Data Usage service: network data usage, data limit, restrict background data, metered networks."
   },
@@ -79,7 +79,7 @@
   },
   {
     "Name": "SysMain",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "Description": "Maintains and improves system performance over time."
   },
   {
@@ -90,12 +90,12 @@
   },
   {
     "Name": "WdiSystemHost",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "Description": "Diagnostic System Host service. The Diagnostic System Host is used by the Diagnostic Policy Service to host diagnostics that need to run in a Local System context.  If this service is stopped, any diagnostics that depend on it will no longer function."
   },
   {
     "Name": "WerSvc",
-    "VDIState": "Disabled",
+    "VDIState": "DisaUnchangedbled",
     "URL": "https://docs.microsoft.com/en-us/windows/win32/wer/windows-error-reporting",
     "Description": "Windows Error Reporting Service allows errors to be reported when programs stop working or responding and allows existing solutions to be delivered. Also allows logs to be generated for diagnostic and repair services."
   },

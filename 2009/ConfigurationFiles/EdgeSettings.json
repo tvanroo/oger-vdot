@@ -37,7 +37,7 @@
         "RegItemValueName": "NotifyDisableIEOptions",
         "RegItemValueType": "DWord",
         "RegItemValue": "0",
-        "VDIState": "Enabled"
+        "VDIState": "Unchanged"
     },
     {
         "Description": "This policy specifies the path to a file (e.g. either stored locally or on a network location) that contains file type and protocol default application associations.",
