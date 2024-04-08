@@ -85,7 +85,7 @@
   },
   {
     "AppxPackage": "Microsoft.Paint",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://apps.microsoft.com/detail/9PCFS5B6T72H?hl=en-us&gl=US",
     "Description": "Classic Paint app"
   },
@@ -97,7 +97,7 @@
   },
   {
     "AppxPackage": "Microsoft.PowerAutomateDesktop",
-    "VDIState": "UnchDisabledanged",
+    "VDIState": "Disabled",
     "URL": "https://flow.microsoft.com/en-us/desktop/",
     "Description": "Power Automate Desktop app. Record desktop and web actions in a single flow"
   },
