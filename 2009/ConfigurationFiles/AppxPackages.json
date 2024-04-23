@@ -139,7 +139,7 @@
   },
   {
     "AppxPackage": "Microsoft.Windows.Photos",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/microsoft-photos/9wzdncrfjbh4",
     "Description": "Photo and video editor"
   },
