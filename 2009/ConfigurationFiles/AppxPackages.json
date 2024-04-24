@@ -295,7 +295,7 @@
   },
   {
     "AppxPackage": "Microsoft.OneDriveSync",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://docs.microsoft.com/en-us/onedrive/one-drive-sync",
     "Description": "Microsoft OneDrive sync app (included in Office 2016 or later)"
   },
