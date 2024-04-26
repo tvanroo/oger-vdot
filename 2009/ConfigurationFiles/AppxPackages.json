@@ -13,13 +13,13 @@
   },
   {
     "AppxPackage": "Microsoft.BingNews",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/microsoft-news/9wzdncrfhvfw",
     "Description": "Microsoft News app"
   },
   {
     "AppxPackage": "Microsoft.BingWeather",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/msn-weather/9wzdncrfj3q2",
     "Description": "MSN Weather app"
   },
@@ -61,7 +61,7 @@
   },
   {
     "AppxPackage": "Microsoft.MicrosoftSolitaireCollection",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/microsoft-solitaire-collection/9wzdncrfhwd2",
     "Description": "Solitaire suite of games"
   },
@@ -79,7 +79,7 @@
   },
   {
     "AppxPackage": "Microsoft.MSPaint",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://apps.microsoft.com/store/detail/paint-3d/9NBLGGH5FV99",
     "Description": "Paint 3D app (not Classic Paint app)"
   },
@@ -91,13 +91,13 @@
   },
   {
     "AppxPackage": "Microsoft.People",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/microsoft-people/9nblggh10pg8",
     "Description": "Contact management app"
   },
   {
     "AppxPackage": "Microsoft.PowerAutomateDesktop",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://flow.microsoft.com/en-us/desktop/",
     "Description": "Power Automate Desktop app. Record desktop and web actions in a single flow"
   },
@@ -121,7 +121,7 @@
   },
   {
     "AppxPackage": "Microsoft.Todos",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/microsoft-to-do-lists-tasks-reminders/9nblggh5r558",
     "Description": "Microsoft To Do makes it easy to plan your day and manage your life"
   },
@@ -133,7 +133,7 @@
   },
   {
     "AppxPackage": "Microsoft.Windows.DevHome",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://learn.microsoft.com/en-us/windows/dev-home/",
     "Description": "A control center providing the ability to monitor projects in your dashboard using customizable widgets and more"
   },
@@ -169,13 +169,13 @@
   },
   {
     "AppxPackage": "Microsoft.WindowsFeedbackHub",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/feedback-hub/9nblggh4r32n",
     "Description": "App to provide Feedback on Windows and apps to Microsoft"
   },
   {
     "AppxPackage": "Microsoft.WindowsMaps",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/windows-maps/9wzdncrdtbvb",
     "Description": "Microsoft Maps app"
   },
@@ -253,7 +253,7 @@
   },
   {
     "AppxPackage": "Microsoft.ZuneVideo",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/movies-tv/9wzdncrfj3p2",
     "Description": "Movies and TV app"
   },
