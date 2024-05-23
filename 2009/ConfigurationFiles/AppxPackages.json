@@ -1,13 +1,13 @@
 [
   {
     "AppxPackage": "Clipchamp.Clipchamp",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://apps.microsoft.com/detail/9p1j8s7ccwwt?hl=en-us&gl=US",
     "Description": "Create videos with a few clicks"
   },
   {
     "AppxPackage": "Microsoft.549981C3F5F10",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://apps.microsoft.com/detail/cortana/9NFFX4SZZ23L?hl=en-us&gl=US",
     "Description": "Cortana (could not update)"
   },
@@ -43,7 +43,7 @@
   },
   {
     "AppxPackage": "Microsoft.Getstarted",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/microsoft-tips/9wzdncrdtbjj",
     "Description": "Windows 10 tips app"
   },
@@ -55,7 +55,7 @@
   },
   {
     "AppxPackage": "Microsoft.Office.OneNote",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/onenote-for-windows-10/9wzdncrfhvjl",
     "Description": "Office UWP OneNote app"
   },
@@ -241,13 +241,13 @@
   },
   {
     "AppxPackage": "Microsoft.YourPhone",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/Your-phone/9nmpj99vjbwv",
     "Description": "Android phone to PC device interface app"
   },
   {
     "AppxPackage": "Microsoft.ZuneMusic",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/groove-music/9wzdncrfj3pt",
     "Description": "Groove Music app"
   },
@@ -289,7 +289,7 @@
   },
   {
     "AppxPackage": "MicrosoftTeams",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
     "Description": "Microsoft communication platform"
   },
