@@ -211,25 +211,25 @@
   },
   {
     "AppxPackage": "Microsoft.Xbox.TCUI",
-    "VDIState": "Unchanged",
+    "VDIState": "Disabled",
     "URL": "https://docs.microsoft.com/en-us/gaming/xbox-live/features/general/tcui/live-tcui-overview",
     "Description": "XBox Title Callable UI (TCUI) enables your game code to call pre-defined user interface displays"
   },
   {
     "AppxPackage": "Microsoft.XboxGameOverlay",
-    "VDIState": "Unchanged",
+    "VDIState": "Disabled",
     "URL": "https://www.microsoft.com/en-us/p/xbox-game-bar/9nzkpstsnw4p",
     "Description": "Xbox Game Bar extensible overlay"
   },
   {
     "AppxPackage": "Microsoft.XboxGamingOverlay",
-    "VDIState": "Unchanged",
+    "VDIState": "Disabled",
     "URL": "https://www.microsoft.com/en-us/p/xbox-game-bar/9nzkpstsnw4p",
     "Description": "Xbox Game Bar extensible overlay"
   },
   {
     "AppxPackage": "Microsoft.XboxIdentityProvider",
-    "VDIState": "Unchanged",
+    "VDIState": "Disabled",
     "URL": "https://www.microsoft.com/en-us/p/xbox-identity-provider/9wzdncrd1hkw",
     "Description": "A system app that enables PC games to connect to Xbox Live."
   },
@@ -271,7 +271,7 @@
   },
   {
     "AppxPackage": "Microsoft.XboxApp",
-    "VDIState": "Unchanged",
+    "VDIState": "Disabled",
     "URL": "https://www.microsoft.com/store/apps/9wzdncrfjbd8",
     "Description": "Xbox 'Console Companion' app (games, friends, etc.)"
   },
@@ -307,7 +307,7 @@
   },
   {
     "AppxPackage": "Microsoft.Windows.Ai.Copilot.Provider",
-    "VDIState": "Unchanged",
+    "VDIState": "Disabled",
     "URL": "https://www.microsoft.com/en-us/payments",
     "Description": "(Microsoft Pay) for Edge browser on certain devices"
   }
