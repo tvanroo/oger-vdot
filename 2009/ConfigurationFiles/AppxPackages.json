@@ -31,7 +31,7 @@
   },
   {
     "AppxPackage": "Microsoft.GamingApp",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/xbox/9mv0b5hzvk9z",
     "Description": "Xbox app"
   },
@@ -49,7 +49,7 @@
   },
   {
     "AppxPackage": "Microsoft.MicrosoftOfficeHub",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/office/9wzdncrd29v9",
     "Description": "Office UWP app suite"
   },
@@ -73,7 +73,7 @@
   },
   {
     "AppxPackage": "Microsoft.OutlookForWindows",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://apps.microsoft.com/detail/9NRX63209R7B?hl=en-us&gl=US",
     "Description": "a best-in-class email experience that is free for anyone with Windows"
   },
@@ -109,7 +109,7 @@
   },
   {
     "AppxPackage": "Microsoft.SkypeApp",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/skype/9wzdncrfj364",
     "Description": "Instant message, voice or video call app"
   },
@@ -163,7 +163,7 @@
   },
   {
     "AppxPackage": "microsoft.windowscommunicationsapps",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/mail-and-calendar/9wzdncrfhvqm",
     "Description": "Mail & Calendar apps"
   },
@@ -211,25 +211,25 @@
   },
   {
     "AppxPackage": "Microsoft.Xbox.TCUI",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://docs.microsoft.com/en-us/gaming/xbox-live/features/general/tcui/live-tcui-overview",
     "Description": "XBox Title Callable UI (TCUI) enables your game code to call pre-defined user interface displays"
   },
   {
     "AppxPackage": "Microsoft.XboxGameOverlay",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/xbox-game-bar/9nzkpstsnw4p",
     "Description": "Xbox Game Bar extensible overlay"
   },
   {
     "AppxPackage": "Microsoft.XboxGamingOverlay",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/xbox-game-bar/9nzkpstsnw4p",
     "Description": "Xbox Game Bar extensible overlay"
   },
   {
     "AppxPackage": "Microsoft.XboxIdentityProvider",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/xbox-identity-provider/9wzdncrd1hkw",
     "Description": "A system app that enables PC games to connect to Xbox Live."
   },
@@ -271,13 +271,13 @@
   },
   {
     "AppxPackage": "Microsoft.XboxApp",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/store/apps/9wzdncrfjbd8",
     "Description": "Xbox 'Console Companion' app (games, friends, etc.)"
   },
   {
     "AppxPackage": "Microsoft.MixedReality.Portal",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/p/mixed-reality-portal/9ng1h8b3zc7m",
     "Description": "The app that facilitates Windows Mixed Reality setup, and serves as the command center for mixed reality experiences"
   },
@@ -294,6 +294,12 @@
     "Description": "Microsoft communication platform"
   },
   {
+    "AppxPackage": "MSTeams",
+    "VDIState": "Disabled",
+    "URL": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+    "Description": "Microsoft communication platform"
+  },
+  {
     "AppxPackage": "Microsoft.OneDriveSync",
     "VDIState": "Unchanged",
     "URL": "https://docs.microsoft.com/en-us/onedrive/one-drive-sync",
@@ -301,13 +307,13 @@
   },
   {
     "AppxPackage": "Microsoft.Wallet",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/payments",
     "Description": "(Microsoft Pay) for Edge browser on certain devices"
   },
   {
     "AppxPackage": "Microsoft.Windows.Ai.Copilot.Provider",
-    "VDIState": "Disabled",
+    "VDIState": "Unchanged",
     "URL": "https://www.microsoft.com/en-us/payments",
     "Description": "(Microsoft Pay) for Edge browser on certain devices"
   }
